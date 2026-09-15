@@ -1,24 +1,19 @@
-use std::io;
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn new(width: u32, height: u32) -> Rectangle {
+        Rectangle { width, height }
+    }
+
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
 
 fn main() {
-    println!("Welcome to Rust!");
-    
-    // Reading user input
-    println!("Please enter your name:");
-    let mut name = String::new();
-    io::stdin()
-        .read_line(&mut name)
-        .expect("Failed to read line");
-    
-    let name = name.trim(); // Remove newline
-    println!("Nice to meet you, {}!", name);
-    
-    // Basic arithmetic
-    let a = 10;
-    let b = 3;
-    println!("{} + {} = {}", a, b, a + b);
-    println!("{} - {} = {}", a, b, a - b);
-    println!("{} * {} = {}", a, b, a * b);
-    println!("{} / {} = {}", a, b, a / b);
-    println!("{} % {} = {}", a, b, a % b);
+    let r: Rectangle = Rectangle::new(3, 6);
+    println!("Area is {}", r.area())
 }
