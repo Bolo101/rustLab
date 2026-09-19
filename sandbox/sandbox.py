@@ -1,5 +1,3 @@
-def greet(*names, punctuation='!'):
-    """Greet a list of names with a specified punctuation."""
-    return "\n".join(f"hello {name}{punctuation}" for name in names)
-
-print(greet("Ana", "Bo"))
+a = [1, 2, 3]
+b = ["x", "y"]
+print(dict(zip(a, b)))
