@@ -1,19 +1,13 @@
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {
-    fn new(width: u32, height: u32) -> Rectangle {
-        Rectangle { width, height }
-    }
-
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
+fn stats(v: &Vec<i32>) -> Option<(i32, i32)> {
+    if v.is_empty() {
+        return None;
+    };
+    let max = *v.iter().max().unwrap();
+    let min = *v.iter().min().unwrap();
+    Some((max, min))
 }
 
 fn main() {
-    let r: Rectangle = Rectangle::new(3, 6);
-    println!("Area is {}", r.area())
+    let m: Vec<i32> = vec![1, 2, 3, 4];
+    println!("Stats {:?}", stats(&m))
 }
