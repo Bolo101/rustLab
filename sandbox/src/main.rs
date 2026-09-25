@@ -1,13 +1,9 @@
-fn stats(v: &Vec<i32>) -> Option<(i32, i32)> {
-    if v.is_empty() {
-        return None;
-    };
-    let max = *v.iter().max().unwrap();
-    let min = *v.iter().min().unwrap();
-    Some((max, min))
-}
+use std::collections::HashMap;
 
 fn main() {
-    let m: Vec<i32> = vec![1, 2, 3, 4];
-    println!("Stats {:?}", stats(&m))
+    let mut counts: HashMap<char, i32> = HashMap::new();
+    for c in "mississipi".chars() {
+        *counts.entry(c).or_insert(0) += 1;
+    }
+    println!("{:?}", counts)
 }
