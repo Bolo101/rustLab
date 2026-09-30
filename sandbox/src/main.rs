@@ -1,9 +1,12 @@
-use std::collections::HashMap;
+fn double_parsed(text: &str) -> Result<i32, String> {
+    let n = text.trim().parse::<i32>().map_err(|e| e.to_string())?;
+    Ok(n * 2)
+}
 
 fn main() {
-    let mut counts: HashMap<char, i32> = HashMap::new();
-    for c in "mississipi".chars() {
-        *counts.entry(c).or_insert(0) += 1;
-    }
-    println!("{:?}", counts)
+    println!(
+        "Value double of {} is {:?}",
+        "42".to_string(),
+        double_parsed("42")
+    );
 }
