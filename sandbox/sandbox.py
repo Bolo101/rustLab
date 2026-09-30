@@ -1,13 +1,28 @@
-class Temperature:
-    def __init__(self, temperature):
-        self.temperature = temperature
+class Dog:
+    # __init__ runs when you create an instance (the "constructor").
+    # self = the instance being created. Always the first parameter.
+    def __init__(self, name, age):
+        self.name = name      # attribute: stored ON the instance
+        self.age = age
 
-    def to_farenheit(self):
-        return (self.temperature * 9/5) + 32
+    # A method — a function that belongs to the class.
+    def bark(self):
+        return f"{self.name} says WOOF!"
 
-    def __str__(self):
-        return f"The temperature is {self.temperature}°C"
+    def birthday(self):
+        self.age += 1         # methods can modify the instance's attributes
 
-temp = Temperature(25)
-print(f"Temperature in Celsius: {temp}")
-print(f"Temperature in Fahrenheit: {temp.to_farenheit()}°F")    
+class Puppy(Dog):
+    def bark(self):
+        return f"{self.name} says yip! yip!"
+# Creating instances:
+rex = Dog("Rex", 3)
+bella = Dog("Bella", 5)
+max = Puppy("Max", 1)
+
+print(rex.name)        # Rex
+print(rex.bark())      # Rex says WOOF!
+rex.birthday()
+print(rex.age)         # 4
+
+print(max.bark())
