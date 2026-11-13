@@ -242,6 +242,9 @@ systemd is Debian's init system: PID 1, parent of all services. Unit files live 
 ```bash
 sudo apt install openssh-server
 systemctl status ssh
+
+# Generate your own key pair (accept the defaults, add a passphrase)
+ssh-keygen -t ed25519
 # connect from another machine:
 ssh alice@192.168.1.50
 # copy your public key for passwordless login:
