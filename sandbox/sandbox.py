@@ -1,11 +1,7 @@
-people = {}
-try:
-    with open("./sandbox/file1.txt") as f:
-        for line in f:
-            name,age = line.rstrip().split(",")
-            people[name] = int(age)
-        
-    for name,age in sorted(people.items(), key= lambda age: age[1], reverse=True):
-        print(f"{name} is {age}")
-except FileNotFoundError:
-    print("Filename is invalid")
+nums = [f for f in range(1,21)]
+mult3 = [n for n in nums if n%3 ==0]
+print(mult3)
+squares = {n : n*n for n in mult3}
+print(squares)
+odds = {n for n in nums if n%2 ==1}
+print(odds)
